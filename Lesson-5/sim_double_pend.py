@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
     # TODO: change to DP-1.urdf, DP-2.urdf, DP-3.urdf, DP-4.urdf
-    urdf_path = os.path.join(os.path.dirname(__file__), "DP-3.urdf")
+    urdf_path = os.path.join(os.path.dirname(__file__), "DP-4.urdf")
     
     meshcat = Meshcat()
     meshcat.SetCameraPose(
@@ -51,10 +51,10 @@ if __name__ == "__main__":
     parser.AddModels(urdf_path)
     plant.Finalize()
     
-    # add actuation to the multibody plant
-    if 'DP-4.urdf' in urdf_path:
-        vector_source = builder.AddSystem(ConstantVectorSource([0.0, 5.0]))
-        builder.Connect(vector_source.get_output_port(), plant.get_actuation_input_port())
+    # add actuation to the multibody plant (optional)
+    # if 'DP-4.urdf' in urdf_path:
+    #     vector_source = builder.AddSystem(ConstantVectorSource([0.0, 5.0]))
+    #     builder.Connect(vector_source.get_output_port(), plant.get_actuation_input_port())
         
 
     AddDefaultVisualization(builder, meshcat)

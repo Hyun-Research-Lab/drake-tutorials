@@ -84,7 +84,7 @@ if __name__ == "__main__":
     # set initial conditions
     context = diagram.CreateDefaultContext()
     context.SetTime(0.0)
-    context.SetContinuousState(np.deg2rad(np.array([170, 0])))
+    context.SetContinuousState(np.deg2rad(np.array([0, 0])))
     
     # create the simulator
     simulator = Simulator(diagram, context)

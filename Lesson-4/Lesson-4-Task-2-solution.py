@@ -145,7 +145,7 @@ if __name__ == "__main__":
     
     # arm (bonus: add red color)
     arm_id = scene_graph.RegisterGeometry(source_id, frame_id, 
-        GeometryInstance(RigidTransform(RotationMatrix(), np.array([0,0,0.5])), Cylinder(0.05, 1.0), "cylinder_geometry"))
+        GeometryInstance(RigidTransform(RotationMatrix(), np.array([0,0,0.5])), Cylinder(0.025, 1.0), "cylinder_geometry"))
     props = IllustrationProperties()
     props.AddProperty("phong", "diffuse", Rgba(1, 0, 0, 1.0))
     scene_graph.AssignRole(source_id, arm_id, props)
